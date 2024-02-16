@@ -63,8 +63,8 @@ if __name__ == '__main__':
     parent_parent_dir = os.path.dirname(os.path.dirname(current_dir))
     sys.path.append(parent_parent_dir)
 
-    from utils import snowpark_utils
-    session = snowpark_utils.get_snowpark_session()
+    from snowpark_utils import get_snowpark_session
+    session=get_snowpark_session()
 
     if len(sys.argv) > 1:
         print(main(session, *sys.argv[1:]))  # type: ignore
